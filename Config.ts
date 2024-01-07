@@ -44,6 +44,7 @@ export default class Config implements IConfig {
         }
 
         if (process.env?.OPEN_AI_ENABLED === "true") {
+            this.openAIEnabled = true;
             if (!process.env.OPENAI_API_KEY) {
                 throw new Error('Open AI is enabled but no API KEY was set');
             }
